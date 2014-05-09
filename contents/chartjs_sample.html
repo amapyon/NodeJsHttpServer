@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>canvas sample</title>
+<script src='Chart.js'></script>
+<script type='text/javascript'>
+<!--
+//var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//var y = [10, 20, 30, 40, 50, 60];
+//-->
+</script>
+<script src='data.jss'></script>
+<script type='text/javascript'>
+<!--
+
+var data = {
+  labels: x,
+  datasets: [{data: y}]
+};
+
+console.log(data.labels);
+
+var option = {
+				
+	//Boolean - If we show the scale above the chart data			
+	scaleOverlay : true, //false,
+	
+	//Boolean - If we want to override with a hard coded scale
+	scaleOverride : false,
+	
+	//** Required if scaleOverride is true **
+	//Number - The number of steps in a hard coded scale
+	scaleSteps : null,
+	//Number - The value jump in the hard coded scale
+	scaleStepWidth : null,
+	//Number - The scale starting value
+	scaleStartValue : null,
+
+	//String - Colour of the scale line	
+	scaleLineColor : "rgba(0,0,0,.1)",
+	
+	//Number - Pixel width of the scale line	
+	scaleLineWidth : 1,
+
+	//Boolean - Whether to show labels on the scale	
+	scaleShowLabels : true,
+	
+	//Interpolated JS string - can access value
+	scaleLabel : "<%=value%>",
+	
+	//String - Scale label font declaration for the scale label
+	scaleFontFamily : "'Arial'",
+	
+	//Number - Scale label font size in pixels	
+	scaleFontSize : 12,
+	
+	//String - Scale label font weight style	
+	scaleFontStyle : "normal",
+	
+	//String - Scale label font colour	
+	scaleFontColor : "#666",	
+	
+	///Boolean - Whether grid lines are shown across the chart
+	scaleShowGridLines : true,
+	
+	//String - Colour of the grid lines
+	scaleGridLineColor : "rgba(0,0,0,.05)",
+	
+	//Number - Width of the grid lines
+	scaleGridLineWidth : 1,	
+	
+	//Boolean - Whether the line is curved between points
+	bezierCurve : false, //true,
+	
+	//Boolean - Whether to show a dot for each point
+	pointDot : true,
+	
+	//Number - Radius of each point dot in pixels
+	pointDotRadius : 2,
+	
+	//Number - Pixel width of point dot stroke
+	pointDotStrokeWidth : 1,
+	
+	//Boolean - Whether to show a stroke for datasets
+	datasetStroke : true,
+	
+	//Number - Pixel width of dataset stroke
+	datasetStrokeWidth : 2,
+	
+	//Boolean - Whether to fill the dataset with a colour
+	datasetFill : false, //true,
+	
+	//Boolean - Whether to animate the chart
+	animation : false, //true
+
+	//Number - Number of animation steps
+	animationSteps : 60,
+	
+	//String - Animation easing effect
+	animationEasing : "easeOutQuart",
+
+	//Function - Fires when the animation is complete
+	onAnimationComplete : null
+	
+};
+
+function draw() {
+  var cv = document.getElementById('sample1');
+  if (cv == null) return;
+
+  console.log(cv);
+  var ctx = cv.getContext('2d');
+  new Chart(ctx).Line(data, option);
+};
+
+
+//-->
+</script>
+</head>
+<body onload='draw()'>
+<canvas id='sample1' width='800' height='400' style='background-color:#c0f0f0;'>
+図形を表示するには、canvasタグをサポートしたブラウザが必要です。
+</canvas> 
+</body>
+</html>
